@@ -10,3 +10,8 @@ export function getRedirectPath({type, avatar}){
 	}
 	return url
 }
+
+export function getLoginPath(type, avatar) {
+	// 根据登录信息， 处理登录
+	
+}

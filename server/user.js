@@ -4,12 +4,15 @@ const models = require('./model')
 const User = models.getModel('user')
 
 Router.get('/list', function(req, res) {
+    // 删除
+    User.remove({}, function (e, d) {})   
     // 查找
     User.find({}, function(err, doc) {
         return res.json(doc)
     })
 })
-// POST
+
+// POST 注册
 Router.post('/register', function (req, res) {
     console.log(req.body)
     const {user, pwd, type} = req.body
@@ -24,6 +27,10 @@ Router.post('/register', function (req, res) {
             return res.json({code: 0})
         })
     })
+})
+// 登录 POST
+Router.post('/login', function(req, res) {
+    console.log(req.body)
 })
 
 // user
