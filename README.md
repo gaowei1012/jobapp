@@ -23,6 +23,6 @@ npm start
 
     前端: React全家桶 axios 
     
-    后端: mongoodb express
+    后端: mongodb express
 
 ## 后续功能还在完善中....    
