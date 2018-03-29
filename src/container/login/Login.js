@@ -41,7 +41,7 @@ class Login extends React.Component {
     // 登录
     handleLogin() {
            this.props.login(this.state)
-           console.log(1)
+           console.log(this.state)
         // console.log(this.props)
     }
 

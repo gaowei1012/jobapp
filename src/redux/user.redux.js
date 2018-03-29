@@ -49,9 +49,9 @@ export function login({user, pwd}) {
     return dispatch=> {
         axios.post('/user/login', {user, pwd})
             .then(res => {
-                console.log(res)
+                console.log(user,pwd)
                 if (res.status==200&&res.data.code==0) {
-                    dispatch(loginSuccess({user, pwd}))
+                    dispatch(loginSuccess(res.data.data))
                 } else {
                     dispatch(errorMsg(res.data.msg))
                 }
