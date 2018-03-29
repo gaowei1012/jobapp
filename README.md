@@ -1,7 +1,8 @@
 ## job app
 
 ## 下载
-git clone https://github.com/gmw-zjw/jobapp.git 
+
+  git clone https://github.com/gmw-zjw/jobapp.git 
 
 ##依赖安装
 cd jobapp && npm install
