@@ -1,9 +1,13 @@
 import React from 'react'
 import { NavBar, Icon, Grid, List, InputItem, Button, TextareaItem } from 'antd-mobile'
-
+import { connect } from 'react-redux'
 import AvatarSelector from '../../conponent/avatarselector/AvatarSelector'
+import { update } from '../../redux/user.redux'
 
-
+@connect(
+    state=>state.user,
+    {update}
+)
 class BossInfo extends React.Component {
     constructor(props) {
         super(props)
@@ -37,17 +41,22 @@ class BossInfo extends React.Component {
                     >职位名称</InputItem>
                     <InputItem
                         onChange={v => this.handleChange('Uname', v)}
-                    >公司信息</InputItem>
+                    >公司名称</InputItem>
+                    <InputItem
+                        onChange={v => this.handleChange('Uname', v)}
+                    >薪资标准</InputItem>
                     <TextareaItem
                         title="职位要求"
                         placeholder="不少于30字符"
                         data-seed="logId"
                         autoHeight
-                        onChange={v=>this.handleChange('text', v)}
+                        onChange={v => this.handleChange('text', v)}
                     />
                     <Button
                         type="primary"
-                        onClick={this.handleRegister}
+                        onClick={() => {
+                            this.props.update(this.state)
+                        }}
                     >保存</Button>
                 </List>
             </div>
