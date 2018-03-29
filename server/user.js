@@ -29,13 +29,6 @@ Router.post('/update', function(req, res) {
         return res.json({code: 0, data})
       
     })
-    // User.findByIdAndUpdate(userid, body, function(err, doc) {
-    //     const data = Object.assign({}, {
-    //         user: doc.user,
-    //         type: doc.type
-    //     }, body)
-    //     return res.json({code: 0, data})
-    // })
 })
 Router.post('/login', function(req,res){
 	const {user, pwd} = req.body
@@ -82,7 +75,7 @@ Router.get('/info',function(req, res){
 })
 
 function md5Pwd(pwd){
-	const salt = 'mcdsvosvniuasbodaspoj24344JIUTJ024HGJKBK!@#IUHJh~~'
+	const salt = 'mcdsvosvn/iuas+bodaspoj2_4344JIUTJ024HGJKBK!@#IUHJh~~'
 	return utils.md5(utils.md5(pwd+salt))
 }
 
