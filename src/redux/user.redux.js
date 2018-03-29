@@ -25,7 +25,9 @@ export function user(state=initState, action){
 	}
 } 
 
-function authSuccess(data) {
+function authSuccess(obj) {
+	// 过滤pwd
+	const {pwd, ...data} = obj
 	return { type: AUTH_SUCCESS, payload: data }
 }
 
