@@ -8,10 +8,13 @@ import {
     Route,
     Redirect
 } from 'react-router-dom'
+
 import AuthRouter from './conponent/authroute/AuthRoute'
 import Login from './container/login/Login';
 import Register from './container/register/Register';
+import BossInfo from './container/bossinfo/BossInfo'
 import reducers from './reducer';
+
 import './config'
 import './index.css'
 
@@ -21,18 +24,12 @@ const store = createStore(reducers, compose(
     window.devToolsExtension?window.devToolsExtension():f=>f
 ))
 
-function Boos() {
-    return <h2>我是boos页面</h2>
-}
-
 function render() {
     ReactDOM.render(
         (<Provider store={store}>
             <BrowserRouter>
                 <div>
-                    {/* <AuthRouter />
-                    <Boos></Boos> */}
-                    {/* <Redirect to="/login"></Redirect> */}
+                    <Route path="/bossinfo" component={BossInfo} ></Route>
                     <Route path="/login" component={Login}></Route>
                     <Route path="/register" component={Register}></Route>
                 </div>                

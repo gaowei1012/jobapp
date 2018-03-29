@@ -7,7 +7,7 @@ const User = model.getModel('user')
 const _filter = {'pwd':0,'__v':0}
 
 Router.get('/list',function(req, res){
-	User.remove({},function(e,d){})
+	// User.remove({},function(e,d){})
 	User.find({},function(err,doc){
 		return res.json(doc)
 	})
