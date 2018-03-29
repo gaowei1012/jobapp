@@ -1,8 +1,32 @@
 import React from 'react'
 import { NavBar, List, InputItem, TextareaItem, Button } from 'antd-mobile'
 import AvatarSelector from '../../conponent/avatarselector/AvatarSelector'
+import { connect } from 'react-redux'
+import { update } from '../../redux/user.redux'
 
+@connect(
+    state=>state.user,
+    { update }
+)
 class GeniusInfo extends React.Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            title: '',
+            company: '',
+            money: '',
+            desc: ''
+        }
+    }
+
+    handleChange(key, val) {
+        this.setState({
+            [key]: val
+        })
+    }
+
     render() {
         return (
             <div>
