@@ -10,10 +10,11 @@ import {
 } from 'react-router-dom'
 
 import AuthRouter from './conponent/authroute/AuthRoute'
-import Login from './container/login/Login';
-import Register from './container/register/Register';
+import Login from './container/login/Login'
+import Register from './container/register/Register'
 import BossInfo from './container/bossinfo/BossInfo'
-import reducers from './reducer';
+import GeniusInfo from './container/geniusinfo/GeniusInfo'
+import reducers from './reducer'
 
 import './config'
 import './index.css'
@@ -29,6 +30,7 @@ function render() {
         (<Provider store={store}>
             <BrowserRouter>
                 <div>
+                    <Route path="/geniusinfo" component={GeniusInfo}></Route>
                     <Route path="/bossinfo" component={BossInfo} ></Route>
                     <Route path="/login" component={Login}></Route>
                     <Route path="/register" component={Register}></Route>

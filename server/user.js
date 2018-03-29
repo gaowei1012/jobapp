@@ -78,12 +78,11 @@ Router.get('/info',function(req, res){
 			return res.json({code:0,data:doc})
 		}
 	})
-	// 用户有没有cookie
 	
 })
 
 function md5Pwd(pwd){
-	const salt = 'imooc_is_good_3957x8yza6!@#IUHJh~~'
+	const salt = 'mcdsvosvniuasbodaspoj24344JIUTJ024HGJKBK!@#IUHJh~~'
 	return utils.md5(utils.md5(pwd+salt))
 }
 
