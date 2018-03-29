@@ -1,14 +1,22 @@
+
 ## job app
 
 ## 下载
 
+  ```javascript
   git clone https://github.com/gmw-zjw/jobapp.git 
+  ```
+## 依赖安装
 
-##依赖安装
-cd jobapp && npm install
+  ```javascript
+  cd jobapp && npm install
+  ```
 
 ## 运行
-npm start
+
+  ```javascript
+  npm start
+  ```
 
 ## 项目介绍
 
