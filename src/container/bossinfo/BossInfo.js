@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavBar, Icon, Grid, List, InputItem, Button, TextareaItem } from 'antd-mobile'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import AvatarSelector from '../../conponent/avatarselector/AvatarSelector'
 import { update } from '../../redux/user.redux'
 
@@ -37,13 +38,13 @@ class BossInfo extends React.Component {
                 ></AvatarSelector>
                 <List>
                     <InputItem
-                        onChange={v => this.handleChange('name', v)}
+                        onChange={v => this.handleChange('title', v)}
                     >职位名称</InputItem>
                     <InputItem
-                        onChange={v => this.handleChange('Uname', v)}
+                        onChange={v => this.handleChange('company', v)}
                     >公司名称</InputItem>
                     <InputItem
-                        onChange={v => this.handleChange('Uname', v)}
+                        onChange={v => this.handleChange('money', v)}
                     >薪资标准</InputItem>
                     <TextareaItem
                         title="职位要求"

@@ -12,6 +12,31 @@ Router.get('/list',function(req, res){
 		return res.json(doc)
 	})
 })
+Router.post('/update', function(req, res) {
+    // 获取用户cookie 并判断是否存在
+    const userid = req.cookies.userid
+    if (!userid) {
+        return res.dumps({code: 1})
+    }
+    // 拿到用户数据 并插入数据
+    const body = req.body
+    console.log(body)
+    User.findOneAndUpdate(userid, body, function(err, doc) {
+        const data = Object.assign({}, {
+            user: doc.user,
+            type: doc.type
+        }, body)
+        return res.json({code: 0, data})
+      
+    })
+    // User.findByIdAndUpdate(userid, body, function(err, doc) {
+    //     const data = Object.assign({}, {
+    //         user: doc.user,
+    //         type: doc.type
+    //     }, body)
+    //     return res.json({code: 0, data})
+    // })
+})
 Router.post('/login', function(req,res){
 	const {user, pwd} = req.body
 	User.findOne({user,pwd:md5Pwd(pwd)},_filter,function(err,doc){
