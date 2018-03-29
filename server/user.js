@@ -5,6 +5,8 @@ const models = require('./model')
 const User = models.getModel('user')
 
 Router.get('/list', function(req, res) {
+    // 删除所有用户
+    // User.remove({}, function(err, doc) {})
     // 查找
     User.find({}, function(err, doc) {
         return res.json(doc)
