@@ -48,7 +48,6 @@ export function login({user,pwd}){
 		axios.post('/user/login',{user,pwd})
 			.then(res=>{
 				if (res.status==200&&res.data.code===0) {
-					// dispatch(registerSuccess({user,pwd,type}))
 					dispatch(authSuccess(res.data.data))
 				}else{
 					dispatch(errorMsg(res.data.msg))

@@ -75,7 +75,7 @@ Router.get('/info',function(req, res){
 })
 
 function md5Pwd(pwd){
-	const salt = 'mcdsvosvn/iuas+bodaspoj2_4344JIUTJ024HGJKBK!@#IUHJh~~'
+	const salt = 'mcdsvosvniuasbod_++bhj+aspoj24344JIUTJ024HGJKBK!@#IUHJh~~'
 	return utils.md5(utils.md5(pwd+salt))
 }
 
