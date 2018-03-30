@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
 	render() {
 		const { pathname } = this.props.location
 		const user = this.props.user
-		const NavSelectBar = [
+		const NavList = [
 			{
 				path: '/boss',
 				text: '牛人',
