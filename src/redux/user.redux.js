@@ -13,6 +13,7 @@ const initState = {
 	user: '',
 	type: ''
 }
+
 // reducer
 export function user(state = initState, action) {
 	switch (action.type) {
@@ -54,7 +55,6 @@ export function login({ user, pwd }) {
 				}
 			})
 	}
-
 }
 
 export function register({ user, pwd, repeatpwd, type }) {
@@ -88,8 +88,3 @@ export function update(data) {
 			})
 	}
 }
-
-
-
-
-
