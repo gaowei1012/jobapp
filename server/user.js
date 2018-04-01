@@ -7,30 +7,26 @@ const User = model.getModel('user')
 const _filter = {'pwd':0,'__v':0}
 
 Router.get('/list',function(req, res){
-	const {type} = req.query
+	const { type } = req.query
+	console.log(type)
 	// User.remove({},function(e,d){})
-
 	User.find({type},function(err,doc){
-		return res.json({code: 0, data: doc})
+		return res.json({code:0,data:doc})
 	})
 })
-Router.post('/update', function(req, res) {
-    // 获取用户cookie 并判断是否存在
-    const userid = req.cookies.userid
-    if (!userid) {
-        return res.dumps({code: 1})
-    }
-    // 拿到用户数据 并插入数据
-    const body = req.body
-    console.log(body)
-    User.findOneAndUpdate(userid, body, function(err, doc) {
-        const data = Object.assign({}, {
-            user: doc.user,
-            type: doc.type
-        }, body)
-        return res.json({code: 0, data})
-      
-    })
+Router.post('/update',function(req,res){
+	const userid = req.cookies.userid
+	if (!userid) {
+		return json.dumps({code:1})
+	}
+	const body = req.body
+	User.findByIdAndUpdate(userid,body,function(err,doc){
+		const data = Object.assign({},{
+			user:doc.user,
+			type:doc.type
+		},body)
+		return res.json({code:0,data})
+	})
 })
 Router.post('/login', function(req,res){
 	const {user, pwd} = req.body
@@ -73,11 +69,12 @@ Router.get('/info',function(req, res){
 			return res.json({code:0,data:doc})
 		}
 	})
+	// 用户有没有cookie
 	
 })
 
 function md5Pwd(pwd){
-	const salt = 'mcdsvosvniuasbod_++bhj+aspoj24344JIUTJ024HGJKBK!@#IUHJh~~'
+	const salt = 'imooc_is_good_3957x8yza6!@#IUHJh~~'
 	return utils.md5(utils.md5(pwd+salt))
 }
 

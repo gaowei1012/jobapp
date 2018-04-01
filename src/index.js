@@ -18,7 +18,6 @@ import GeniusInfo from './container/geniusinfo/GeniusInfo'
 import Dashboard from './conponent/dashboard/Dashboard'
 import reducers from './reducer'
 
-import Test from './conponent/test/Test'
 
 import './config'
 import './index.css'
@@ -34,13 +33,13 @@ function render() {
         (<Provider store={store}>
             <BrowserRouter>
                 <div>
+                    <AuthRouter></AuthRouter>
                     <Switch>
                         <Route path="/geniusinfo" component={GeniusInfo}></Route>
                         <Route path="/bossinfo" component={BossInfo} ></Route>
                         <Route path="/login" component={Login}></Route>
                         <Route path="/register" component={Register}></Route>
-                        <Route  path="/test" component={Test}></Route>
-                        <Route component={Dashboard}></Route>
+                        <Route component={Dashboard} ></Route>
                     </Switch>
                 </div>                
             </BrowserRouter>
