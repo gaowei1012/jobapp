@@ -8,20 +8,21 @@ const initState = {
 }
 
 function userList(data) {
-    return {type: USER_LIST, payload:data}
+    return { type: USER_LIST, payload: data }
 }
 
-export function chatuser(state=initState, action) {
+export function chatuser(state = initState, action) {
     switch (action.type) {
         case USER_LIST:
-            return {...state, userlist: action.payload}           
+            return { ...state, userlist: action.payload }
         default:
             return state
     }
 }
 
+// axios ajax GET
 export function getUserList(type) {
-    return dispatch=>{
+    return dispatch => {
         axios.get('/user/list?type=' + type)
             .then(res => {
                 if (res.data.code == 0) {
