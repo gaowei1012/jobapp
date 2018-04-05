@@ -13,7 +13,6 @@ const initState = {
 	user: '',
 	type: ''
 }
-
 // reducer
 export function user(state = initState, action) {
 	switch (action.type) {
